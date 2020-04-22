@@ -1,0 +1,94 @@
+---
+title: "course2"
+author: "Roxana Agrigoroaie"
+date: "April 22, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Inputs
+
+- Text Input
+- Slider Input
+- Select Input 
+- Numerical input
+- DateRange input
+- etc
+
+Input functions:
+- inputId -> character strings; and it should be unique
+- label -> character strings that is shown to the user
+- specific args depending on the input type
+
+selectInput(id, label, choices)
+
+sliderInput(id, label, value, min, max, step)
+
+to get help:
+- ?dateRangeInput
+- help(checkboxInput)
+
+Inputs are always defined in the UI, and their value can be used in the server as input$id
+
+
+## Outputs
+
+render functions are used to build outputs in the server based on inputs
+
+Render functions:
+
+- renderText
+- renderTable
+- renderPlot
+- renderImage
+- etc
+
+Output functions are used in the UI to display the result from the render functions
+
+Ouput functions:
+
+- textOutput
+- tableOutput() or dataTableOutput
+- imageOutput()
+- plotOutput()
+
+There are other packages that can be used for output and render functions. htmlwidgets packages: DT, leaflet, plotly, etc.
+
+
+## Layouts and themes
+
+Default layout: stacks the elements on top of one another
+Sidebar Layout: 
+  - title at the top
+  - sidebarPanel
+  - mainPanel
+
+Tab Layout: to visualize multiple tabs (for different elements)
+  - it is an extension of the sidebar layout
+  - in the mainPanel we add a tabsetPanel which will contain multiple tabPanel; each tabPanel should have a label
+  
+etc..
+
+
+Themes:
+to add the theme selector to the ui:
+shinytheme::themeSelector()
+
+to add a theme:
+
+
+theme = shinythemes::shinytheme('theme_name') and it should be included right after the title panel;
+
+
+## Building apps
+
+4 main steps:
+
+- add inputs (UI)
+- add outputs (UI/Server)
+- Update layour (UI)
+- Update outputs (Server)
+
